@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quote Generator...</title>
+    
+	<style>
+	body{
+	background:#e0dedbf2;
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	}
+	.content{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	}
+	.main{
+	background:white;
+	margin-top:  8%;
+	border-radius:10px;
+	width:600px;;
+	}
+	.head{
+	text-align:center;
+	}
+	.head button{
+	margin:0;
+	border:none;
+	border-radius:10px;
+	width:50px;
+	height:3.5px;
+	color:blue;
+	background:#426ee9;
+	}
+	.head h2 {
+    margin-top: 50px;
+    line-height: 20px;
+    font-size: 30px;
+    color: #426ee9;
+	}
+	.quote{
+	font-family: 'Anton', sans-serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Edu NSW ACT Foundation', cursive;
+font-family: 'Libre Baskerville', serif;
+line-height:35px;
+	padding:20px;
+	text-align:center;
+	font-size:25px;
+	}
+	.author .hyphen{
+	margin:10px;
+	position:relative;
+	top:-8px;
+	}
+	.author {
+	font-family: 'Anton', sans-serif;
+	font-family: 'Dancing Script', cursive;
+	font-family: 'Edu NSW ACT Foundation', cursive;
+	text-align:right;
+	font-style:italic;
+	margin:20px;
+	}
+	.features{
+	border-top:1px solid grey;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	margin:auto;
+	width:90%;
+	}
+	.icons{
+	margin-top:15px;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	}
+	.icons i{
+	width:10px;
+	height:10px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin:10px;
+	}
+	.copy{
+	background:grey;
+	margin:10px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	border:1px solid grey;
+	border-radius:50%;
+	transition:0.3 ease;
+	}
+	.tweet{
+	background:grey;
+	margin:10px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border:1px solid grey;
+	border-radius:50%;
+	transition:0.3s ease;
+	}
+	
+	.sound{
+	background:grey;
+	margin:10px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border:1px solid grey;
+	border-radius:50%;
+	transition:0.3 ease;
+	}
+	.btn button{
+	border:none;
+	color:white;
+	font-size:13px;
+	background:#426ee9;
+	border-radius:25px;
+	padding:10px;
+	}
+	.btn button:hover{
+	background:#0000ff75;
+	transition:0.3s ease}
+	.header {
+	width:95%;
+	margin:20px auto;
+     padding-top: 1px; 
+    background: #82b960b3;
+    padding-bottom: 2px;
+	}
+	.header h2{
+																		
+	color:#784111;
+	font-size:2.3rem;
+	cursor:pointer;
+	letter-spacing:1px;
+	text-align:center;
+	}
+	.header h4{
+	
+	text-decoration:underline;
+	color:#673ab7;
+	text-align:center;
+	}
+	.header h4:hover{
+	text-decoration:underline;
+	color:#808080a6;
+	cursor:pointer;
+	}
+	.bottom{
+	font-family: 'Anton', sans-serif;
+	font-family: 'Dancing Script', cursive;
+	font-family: 'Edu NSW ACT Foundation', cursive;
+	font-family: 'Libre Baskerville', serif;
+	font-family: 'Lobster', cursive;
+	font-family: 'Orbitron', sans-serif;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Pacifico', cursive;
+	font-family: 'Rowdies', cursive;
+	padding:20px;
+	background:#bb8012d9;
+	color:white;
+	text-align:center;
+	width:85%;
+	
+	margin:180px auto;
+	border-radius:8px;
+	}
+	.aim{
+	font-family: 'Anton', sans-serif;
+	}
+	.bottom #is {	
+    margin: auto;
+    width: 130px;
+    font-size: 39px;
+    display: flex;
+    justify-content: space-between;
+}
+	.bottom h2{
+	color:#522210;
+	}
+	.bottom h4{
+	color:wheat;
+	}
+	.image{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-wrap:wrap;
+	}	
+	.images {
+	font-family: 'Anton', sans-serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Edu NSW ACT Foundation', cursive;
+				
+	padding:5px;
+	border:2px solid #c18b8b;
+	overflow:hidden;
+    display: flex;
+    color: white;
+    text-align: center;
+    font-size: 150%;
+    line-height: 150%;
+    margin: 70px auto;
+    width: 92%;
+    max-width: 400px;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+}   
+	#heading {
+    margin-top: 70px;
+    font-size: 35px;
+    height: 40px;
+    font-sizze: 35px;
+    color: #161499;
+    text-align: center;
+    font-weight: bold;
+}
+	@media(max-width:1300px){
+	.main{
+	margin-top:20%;
+	}
+	}
+	@media(max-width:1000px){
+	.main{
+	margin-top:25%;
+	}
+	}
+	@media(max-width:800px){
+	.quote{
+	padding:5px;
+	}
+	.main{
+	margin-top:28%;
+	}
+	}
+	@media(max-width:640px){
+	.quote{
+	padding:5px;
+	font-size:18px;
+	}
+	#heading{
+	font-size:30px;
+	}
+	.main{
+	margin-top:27%;
+	width:95%;
+	}
+	}
+	@media(max-width:500px){
+	.quote{
+	padding:5px;
+	}
+	.header h2{
+	font-size:26px;
+	letter-spacing:px;
+	}
+	.quote{
+	font-size:17px;
+	}
+	.main{
+	margin-top:25%;
+	width:95%;
+	}
+	}
+	</style>
+	
+  </head>
+  <body onload='getin()' >
+  <section class='header'>
+    <h2> Random Quote Generator </h2>
+	<h4 onclick='just()' > Developer's Contact</h4>
+  </section>
+  
+  
+  <section class='content'>
+  <div class='main'>
+   <div class='head'>
+   <h2>Quote of the day <br><button></button></h2>
+  
+   </div>
+   
+   <div class='quote' id='quote'>
+    
+   </div>
+   
+   <div class='author'  id='author'>
+  
+   </div>
+   <div class='features'>
+   
+   <div class='icons'>
+	 <div class='tweet' id='tweet' onclick='tweet()'>
+	  <i class="fa-brands fa-twitter"></i>
+	 </div>
+	  <div class='sound' id ='sound' onclick='sound()' onclick='clears()' >
+	  <i class="fa-solid fa-volume-high"></i>
+	 </div>
+	  <div class='copy' onclick='copy()' id='copy' >
+	  <i class="fa-regular fa-clipboard"></i>
+	 </div>
+	</div>
+	
+	<div onclick='get()' onload='get()'	 class='btn' >
+	 <button id='btn' >Next Quote</button>
+	</div>
+  </div> 
+  </div>
+  </section>
+  
+  
+  <div class='heading' id='heading'>
+  
+  </div>
+  <section class='image'>
+  
+  
+  <div class='images' id='images'>
+  </div>
+  <div class='images' id='images2'>
+  </div>
+  <div class='images' id='images3'>
+  </div>
+  <div class='images' id='images4'>
+  </div>
+  <div class='images' id='images5'>
+  </div>
+  <div class='images' id='images6'>
+  </div>
+  
+  
+  
+  </section>
+  
+  
+  
+  
+  <section class='bottom' id='bottom'>
+  <h2>Sumit Singh</h2>
+  <h4>Developer</h4>
+  <p>Hello, My name is Sumit Singh, and I am currently pursuing a degree in Computer Science at Delhi University. I am incredibly enthusiastic about the world of technology and its limitless possibilities. To achieve this, I have embarked on a journey of creating different projects that serve as platforms for me to experiment, learn, and grow.<br><br>
+
+This projects have proven to be invaluable in shaping my skills and understanding various aspects of software development, web design, and problem-solving. The passion for continuous improvement is what drives me forward, and As a result, I am always eager to connect with fellow developers, industry professionals, and mentors who can offer guidance and fresh perspectives. I eagerly look forward to the possibility of connecting with you soon.
+  </p>
+  THANKS FOR VISITING <BR><BR>
+  Also visit !<br><br><br>
+  <div class=''aim'>
+  <a href='https://rawatsumit.github.io/Sathiya/' target='_blank' >Saathiya Blog Website</a><br><br>
+  <a href=' https://rawatsumit.github.io/Image-Finder/' target='_blank'>Image Finder</a>
+  </div>
+  <br><br>
+  <div id='is'>
+  <a href ='https://www.linkedin.com/in/sumit-singh-rawat-a3709427b' target='_blank' ><i class="fa-brands fa-linkedin"></i></a>
+  <a href='mailto:mailtosumitrawat13@gmail.com' target='_blank' ><i class="fa-regular fa-envelope"></i></a>
+  </div></section>
+	<script>
+	let author = document.getElementById('author');
+	let quote= document.getElementById('quote');
+	let btn= document.getElementById('btn');
+	let heading= document.getElementById('heading');
+	
+	
+	
+	async function getin(){
+	btn.textContent = 'Loading..';
+	btn.style.background = '#0000ff75';
+	  let a = await fetch(' https://api.quotable.io/random ');
+	  let b = await a.json();
+	  quote.innerHTML = b.content;
+	  if(b.author ==='Nan'){
+	  author.innerHTML ="-  Anonyms";}
+	  else{
+	  author.innerHTML ="- "+ b.author;
+	   btn.textContent = 'Next Quote';
+	  btn.style.background = 'blue';
+	  }
+	  heading.innerHTML ="Some Famous Templates...";
+	  let image =  document.getElementById('images');
+	  image.style.background='url(https://source.unsplash.com/600x700/?nature)';
+	  image.innerHTML = b.content +"<br> -" + b.author;
+	  
+	  let image2 =  document.getElementById('images2');
+	  image2.style.background='url(https://source.unsplash.com/600x700/?random)';
+	  image2.innerHTML = b.content +"<br> -" + b.author;
+	  
+	  let image3 =  document.getElementById('images3');
+	  image3.style.background='url(https://source.unsplash.com/600x700/?music)';
+	  image3.innerHTML = b.content +"<br> -" + b.author;
+	  
+	  let image4 =  document.getElementById('images4');
+	  image4.style.background='url(https://source.unsplash.com/600x700/?sea)';
+	  image4.innerHTML = b.content +"<br> -" + b.author;
+	  
+	    let image5 =  document.getElementById('images5');
+	  image5.style.background='url(https://source.unsplash.com/600x700/?mountains)';
+	  image5.innerHTML = b.content +"<br> -" + b.author;
+	  
+	    let image6 =  document.getElementById('images6');
+	  image6.style.background='url(https://source.unsplash.com/600x700/?desert)';
+	  image6.innerHTML = b.content +"<br> -" + b.author;
+	  
+	 
+	
+	  }
+	  
+	  async function get(){
+	btn.textContent = 'Loading..';
+	btn.style.background = '#0000ff75';
+	  let a = await fetch(' https://api.quotable.io/random ');
+	  let b = await a.json();
+	  quote.innerHTML = b.content;
+	  if(b.author ==='Nan'){
+	  author.innerHTML ="-  Anonyms";}
+	  else{
+	  author.innerHTML ="- "+ b.author;
+	   btn.textContent = 'Next Quote';
+	  btn.style.background = 'blue';
+	  }
+	  heading.innerHTML ="Some Famous Templates...";
+	  let image =  document.getElementById('images');
+	  image.style.background='url(https://source.unsplash.com/600x700/?nature)';
+	  image.innerHTML = b.content +"<br> -" + b.author;
+	  
+	  let image2 =  document.getElementById('images2');
+	  image2.style.background='url(https://source.unsplash.com/600x700/?random)';
+	  image2.innerHTML = b.content +"<br> -" + b.author;
+	  
+	  let image3 =  document.getElementById('images3');
+	  image3.style.background='url(https://source.unsplash.com/600x700/?music)';
+	  image3.innerHTML = b.content +"<br> -" + b.author;
+	  
+	  let image4 =  document.getElementById('images4');
+	  image4.style.background='url(https://source.unsplash.com/600x700/?sea)';
+	  image4.innerHTML = b.content +"<br> -" + b.author;
+	  
+	    let image5 =  document.getElementById('images5');
+	  image5.style.background='url(https://source.unsplash.com/600x700/?mountains)';
+	  image5.innerHTML = b.content +"<br> -" + b.author;
+	  
+	    let image6 =  document.getElementById('images6');
+	  image6.style.background='url(https://source.unsplash.com/600x700/?desert)';
+	  image6.innerHTML = b.content +"<br> -" + b.author;
+	  
+	 
+	
+	  }
+	  
+	  
+	  
+	
+	  
+	 
+	 function  copy(){
+	 let copy = document.getElementById('copy');
+	  navigator.clipboard.writeText(quote.innerHTML);
+	  
+	 
+	  
+	}
+	    function  sound(){
+		let sound = document.getElementById('sound');
+		sound.style.color = 'white';
+	 let utterance = new  SpeechSynthesisUtterance(`${quote.innerHTML} by ${author.innerHTML}`)
+	 speechSynthesis.speak(utterance);
+	  sound.style.color = 'black';
+
+	}
+	
+	function  tweet(){
+	let tweet = document.getElementById('tweet')	;
+	  let tweeturl = `https://www.twitter.com/intent/tweet?url=${quote.innerHTML}`
+	  window.open(tweeturl, "_blank");
+	  
+	  
+	  tweet.style.background = 'grey';
+	}
+	function just(){
+	let content = document.getElementById('bottom');
+	content.scrollIntoView({
+				block: 'start',
+				behavior: 'smooth',
+				inline: 'center'
+				});
+	}
+	
+	
+
+	</script>
+  </body>
+</html>
